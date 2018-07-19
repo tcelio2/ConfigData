@@ -3,7 +3,7 @@ spring:
     name: posts
     
 server:
-  port: 8090
+  port: 9093
 
 eureka:
   instance:
