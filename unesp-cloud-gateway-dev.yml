@@ -1,6 +1,21 @@
 # Allow thymeleaf template changes to reload:
-spring.thymeleaf.cache: false
+#spring.thymeleaf.cache: false
 
 # Zuul-proxied services can be found by calling /services/subject, /services/verb, etc.
+#zuul:
+#  prefix: /services
 zuul:
-  prefix: /services
+  #Service will be mapped under the /api URI
+  prefix: /api
+#  Uncomment to disable auto-registering all services read from Eureka
+#  ignoredServices: '*'
+  routes:
+    test:
+      path: /redirect/**
+      url: http://google.com
+    customer-by-address:
+      path: /customer-by-address/**
+      url: http://localhost:9098
+    customer-by-service:
+      path: /customer-by-service/**
+      serviceId: CUSTOMER-SERVICE
