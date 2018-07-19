@@ -2,7 +2,7 @@ spring:
   application:
     name: forum
 server:
-  port: 8090
+  port: 9094
 
 eureka:
   instance:
