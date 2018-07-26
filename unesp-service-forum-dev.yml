@@ -1,11 +1,14 @@
 spring:
   application:
     name: forum
+  jpa:
+    ddl-auto: create-drop
+    show-sql: true
   datasource:
     url: jdbc:postgresql://localhost:5432/unespiano
     username: postgres
     password: 12345
-    ddl-auto: create-drop
+    
 server:
   port: 9094
 
